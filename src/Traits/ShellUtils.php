@@ -1,6 +1,6 @@
 <?php
 
-namespace ZeekBuildProcess\Traits;
+namespace TRLBuildProcess\Traits;
 
 use const PHP_EOL;
 

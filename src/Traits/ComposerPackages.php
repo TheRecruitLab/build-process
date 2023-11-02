@@ -1,13 +1,13 @@
 <?php
 
-namespace ZeekBuildProcess\Traits;
+namespace TRLBuildProcess\Traits;
 
 use Yosymfony\Toml\Toml;
 
 trait ComposerPackages
 {
     private function composerPackages(): array {
-        $packages = Toml::parseFile($this->templateDir . '/zbp.toml');
+        $packages = Toml::parseFile($this->templateDir . '/trlbp.toml');
 
         return $packages['packages'];
     }

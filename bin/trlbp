@@ -1,10 +1,10 @@
 #!/usr/bin/env php
 <?php
 
-use ZeekBuildProcess\Application;
+use TRLBuildProcess\Application;
 
 if (!defined('PHP_VERSION_ID') || PHP_VERSION_ID < 80000) {
-    fwrite(STDERR, "Zeek Build Process requires PHP 8.0.0 or newer." . PHP_EOL);
+    fwrite(STDERR, "TRL Build Process requires PHP 8.0.0 or newer." . PHP_EOL);
     exit(254);
 }
 

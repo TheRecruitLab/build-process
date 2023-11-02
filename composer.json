@@ -1,6 +1,6 @@
 {
-	"name": "zeek/zeek-build-process",
-	"description": "Scaffold out the build process for Zeek Projects.",
+	"name": "therecruitlab/build-process",
+	"description": "Scaffold out the build process for The Recruit Lab projects.",
 	"license": "proprietary",
 	"type": "project",
 	"require": {
@@ -11,10 +11,10 @@
 	"prefer-stable": true,
 	"autoload": {
 		"psr-4": {
-			"ZeekBuildProcess\\": "src/"
+			"TRLBuildProcess\\": "src/"
 		}
 	},
 	"bin": [
-		"bin/zbp"
+		"bin/trlbp"
 	]
 }

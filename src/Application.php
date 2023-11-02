@@ -1,14 +1,14 @@
 <?php
 
-namespace ZeekBuildProcess;
+namespace TRLBuildProcess;
 
-use ZeekBuildProcess\Exceptions\UnknownCommandException;
-use ZeekBuildProcess\Traits\ComposerPackages;
-use ZeekBuildProcess\Traits\GitHook;
-use ZeekBuildProcess\Traits\Github;
-use ZeekBuildProcess\Traits\Help;
-use ZeekBuildProcess\Traits\ShellUtils;
-use ZeekBuildProcess\Traits\WpSupport;
+use TRLBuildProcess\Exceptions\UnknownCommandException;
+use TRLBuildProcess\Traits\ComposerPackages;
+use TRLBuildProcess\Traits\GitHook;
+use TRLBuildProcess\Traits\Github;
+use TRLBuildProcess\Traits\Help;
+use TRLBuildProcess\Traits\ShellUtils;
+use TRLBuildProcess\Traits\WpSupport;
 
 class Application
 {

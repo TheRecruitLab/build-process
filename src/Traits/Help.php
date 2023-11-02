@@ -1,6 +1,6 @@
 <?php
 
-namespace ZeekBuildProcess\Traits;
+namespace TRLBuildProcess\Traits;
 
 use const PHP_EOL;
 
@@ -47,7 +47,7 @@ HELP;
      */
     private function showVersion(): void
     {
-        echo 'Zeek Build Process '.self::VERSION.PHP_EOL;
+        echo 'TRL Build Process '.self::VERSION.PHP_EOL;
     }
 
     /**
@@ -59,9 +59,9 @@ HELP;
         echo <<<USAGE
 -------------------------------
 Usage:
-zbp install                 Install the build process into this project
-zbp reinstall               Re-install build process (overwrites all build process files)
-zbp uninstall               Remove all build related files and packages
+trlbp install                 Install the build process into this project
+trlbp reinstall               Re-install build process (overwrites all build process files)
+trlbp uninstall               Remove all build related files and packages
 
 
 USAGE;

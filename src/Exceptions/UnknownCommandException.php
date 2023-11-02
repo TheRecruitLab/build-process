@@ -1,6 +1,6 @@
 <?php
 
-namespace ZeekBuildProcess\Exceptions;
+namespace TRLBuildProcess\Exceptions;
 
 use Exception;
 

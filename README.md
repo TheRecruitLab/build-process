@@ -1,4 +1,4 @@
-# Zeek Build Process
+# The Recruit Lab Build Process
 
 ## What It Does
 This package helps to set up a project with the following tools:
@@ -19,22 +19,20 @@ This package helps to set up a project with the following tools:
 https://user-images.githubusercontent.com/953022/166144308-9eb0efd2-2ae4-4c1d-919e-5986bc9b89de.mp4
 
 ## Requirements
-This works with both Laravel and WordPress projects*.
-
-WordPress project structure must follow the Zeek project structure (`mu-plugins/app/`).
+This works with Laravel and WordPress projects.
 
 ## Setup
 Require this package as a `dev` dependency:
 
 ```bash
-composer require --dev zeek/zeek-build-process
+composer require --dev therecruitlab/build-process
 ```
 
 ### Install
 Install by running (assuming your vendor path is `/vendor`):
 
 ```bash
-./vendor/bin/zbp install
+./vendor/bin/trlbp install
 ```
 
 This performs a safe, [no-clobber](https://unix.stackexchange.com/questions/572294/why-is-cps-option-not-to-overwrite-files-called-no-clobber) installation into an existing project. It does so in an [idempotent](https://en.wikipedia.org/wiki/Idempotence) manner: if you run the installation, make some changes to one of the configuration files and then run the installation again, it will not overwrite your changes.
@@ -43,7 +41,7 @@ This performs a safe, [no-clobber](https://unix.stackexchange.com/questions/5722
 If you need to forcefully reinstall and start everything over from scratch you can run:
 
 ```bash
-./vendor/bin/zbp reinstall
+./vendor/bin/trlbp reinstall
 ```
 
 Be warned this will overwrite any changes you've made as well as any [baselines](https://phpstan.org/user-guide/baseline) you've created.
@@ -53,7 +51,7 @@ Be warned this will overwrite any changes you've made as well as any [baselines]
 If you'd like to completely remove all the tools, files and packages that this installs, you can run
 
 ```bash
-./vendor/bin/zbp uninstall
+./vendor/bin/trlbp uninstall
 ```
 
 ### Git Hook Installation
@@ -61,7 +59,7 @@ If you'd like to completely remove all the tools, files and packages that this i
 If you just need to set up your own local `git` `pre-commit` hook, you can simply run:
 
 ```bash
-./vendor/bin/zbp precommit
+./vendor/bin/trlbp precommit
 ```
 
 This will create a `.git/hooks/pre-commit` file that runs the `make precommit` command immediately before the actual git commit happens.
@@ -70,7 +68,7 @@ This will create a `.git/hooks/pre-commit` file that runs the `make precommit` c
 
 A `Makefile` is installed that defines the commands (with configured flags/parameters) to utilize the tools in an easy and repeatable manner.
 
-You can examine the [Makefile](https://github.com/ZeekInteractive/zeek-build-process/blob/main/templates/Makefile) source to really see what it's doing.
+You can examine the [Makefile](https://github.com/TheRecruitLab/-build-process/blob/main/templates/Makefile) source to really see what it's doing.
 
 ### Normal Usage
 
@@ -133,12 +131,12 @@ You should run `make scan` on your own, as it includes the `phpmd` tool which at
 You can bypass the `pre-commit` hook by passing `--no-verify` to the commit command. This should be used sparingly and only when necessary.
 
 ## GitHub Action
-A standardized GitHub action [`build.yml`](https://github.com/ZeekInteractive/zeek-build-process/blob/main/templates/build.yml) file is included which will do all the steps necessary to run the scan commands on every push to GitHub.
+A standardized GitHub action [`build.yml`](https://github.com/TheRecruitLab/-build-process/blob/main/templates/build.yml) file is included which will do all the steps necessary to run the scan commands on every push to GitHub.
 
-This build file will automatically review your code and pull requests and give feedback. You should attempt to fix whatever issues are reported, however this system is still in an experimental stage and it may report things that be irrelevant. If you have any questions please contact Aaron Holbrook.
+This build file will automatically review your code and pull requests and give feedback. You should attempt to fix whatever issues are reported, however this system is still in an experimental stage and it may report things that be irrelevant. If you have any questions please reach in #engineering on Slack.
 
 ## Customizing Configuration Files
-It is completely possible to tweak the tool configurations for your individual project. A `build` [folder](https://github.com/ZeekInteractive/zeek-build-process/tree/main/build) is created upon the initial installation. 
+It is completely possible to tweak the tool configurations for your individual project. A `build` [folder](https://github.com/TheRecruitLab/-build-process/tree/main/build) is created upon the initial installation. 
 
 Each tool has its own directory and configuration file. To tweak the individual file you will have to read the appropriate tool's documentation and see what works best.
 
